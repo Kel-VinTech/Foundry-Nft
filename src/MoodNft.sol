@@ -33,7 +33,7 @@ contract MoodNft is ERC721 {
         s_tokenCounter++;
     }
 
-    function flipMood(uint256 tokenId) public {
+    function flipMood(uint256 tokenId) public view {
         if (!_isApprovedOrOwner(msg.sender, tokenId)) {
             revert MoodNft__CantFlipMoodIfNotOwner();
         }
